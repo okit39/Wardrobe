@@ -1,0 +1,32 @@
+<resources>
+    <string name="title_outfit">OUTFIT</string>
+    <string name="title_wardrobe">WARDROBE</string>
+    <string name="title_settings">SETTINGS</string>
+    <string name="title_sort">СОРТИРОВАТЬ</string>
+    <string name="title_add">ДОБАВЛЕНИЕ ВЕЩИ</string>
+    <string name="title_category">КАТЕГОРИЯ</string>
+    <string name="title_color">ЦВЕТ</string>
+
+    <string-array name="category_of_things">
+        <item>Футболка</item>
+        <item>Брюки</item>
+        <item>Платье</item>
+        <item>Туфли</item>
+        <item>Сумка</item>
+    </string-array>
+
+    <string-array name="color_of_things">
+        <item>Белый</item>
+        <item>Серый</item>
+        <item>Чёрный</item>
+        <item>Красный</item>
+        <item>Оранжевый</item>
+        <item>Желтый</item>
+        <item>Зелёный</item>
+        <item>Голубой</item>
+        <item>Синий</item>
+        <item>Фиолетовый</item>
+        <item>Цветное</item>
+    </string-array>
+
+</resources>

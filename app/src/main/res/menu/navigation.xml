@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_outfit"
+        android:icon="@drawable/outfit"
+        android:title="@string/title_outfit" />
+
+    <item
+        android:id="@+id/navigation_wardrobe"
+        android:icon="@drawable/wardrobe"
+        android:title="@string/title_wardrobe" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/settings"
+        android:title="@string/title_settings" />
+
+</menu>
