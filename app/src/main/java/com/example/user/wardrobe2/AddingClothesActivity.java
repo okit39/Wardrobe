@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -18,8 +19,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,6 +46,7 @@ public class AddingClothesActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private StorageReference mStogageReference;
+    private StorageReference mStorageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +56,35 @@ public class AddingClothesActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Spinner category = findViewById(R.id.spinner_category);
         Spinner color = findViewById(R.id.spinner_color);
-        ImageView photo = findViewById(R.id.photo);
+        final ImageView photo = findViewById(R.id.photo);
         FloatingActionButton fab = findViewById(R.id.fab);
 
         File localFile = null;
+        mRereference = getIntent().getStringExtra("Reference");
+        mStorageRef = FirebaseStorage.getInstance().getReference();
 
+        try {
+            localFile = createTempImageFile(getExternalCacheDir());
+            final File finalLocalFile = localFile;
+
+            mStorageRef.child("images/" + mRereference).getFile(localFile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                            Picasso.with(getBaseContext())
+                                    .load(Uri.fromFile(finalLocalFile))
+                                    .into(photo);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.i("Load","" + e);
+                }
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
