@@ -53,8 +53,7 @@ public class WardrobeFragment extends Fragment {
         FirebaseInit();
 
         wardrobeRecyclerView = v.findViewById(R.id.wardrobe_recyclerView);
-        //???????????????????????????
-        GridLayoutManager mGridLayoutManager = new GridLayoutManager(, 2);
+        GridLayoutManager mGridLayoutManager = new GridLayoutManager(getContext(), 2);
         wardrobeRecyclerView.setLayoutManager(mGridLayoutManager);
         recyclerAdapter = new WardrobeRecyclerViewAdapter(getContext(), listClothes);
         wardrobeRecyclerView.setAdapter(recyclerAdapter);
@@ -78,8 +77,8 @@ public class WardrobeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //переход на AddingClothesActivity
-                //Intent intent = new Intent(getApplicationContext(), AddingClothesActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getContext(), AddingClothesActivity.class);
+                startActivity(intent);
 
             }
         });
