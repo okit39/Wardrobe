@@ -2,17 +2,36 @@
     <string name="title_outfit">OUTFIT</string>
     <string name="title_wardrobe">WARDROBE</string>
     <string name="title_settings">SETTINGS</string>
+    <string name="sign_in">ВОЙТИ</string>
+    <string name="oops">Упс</string>
+    <string name="hint_email">email</string>
+    <string name="hint_password">password</string>
+    <string name="create_account">ЗАРЕГИСТРИРОВАТЬСЯ</string>
+    <string name="title_settings_t">НАСТРОЙКИ</string>
     <string name="title_sort">СОРТИРОВАТЬ</string>
+    <string name="title_things">ВАШИ ВЕЩИ:</string>
     <string name="title_add">ДОБАВЛЕНИЕ ВЕЩИ</string>
     <string name="title_category">КАТЕГОРИЯ</string>
     <string name="title_color">ЦВЕТ</string>
 
+    <string-array name="sort_array">
+        <item>По алфавиту</item>
+        <item>По добавлению</item>
+    </string-array>
+
     <string-array name="category_of_things">
         <item>Футболка</item>
+        <item>Толстовка</item>
         <item>Брюки</item>
+        <item>Джинсы</item>
         <item>Платье</item>
+        <item>Кеды</item>
+        <item>Кроссовки</item>
+        <item>Куртка</item>
+        <item>Обувь</item>
         <item>Туфли</item>
-        <item>Сумка</item>
+        <item>Рюкзак</item>
+        <item>Украшения</item>
     </string-array>
 
     <string-array name="color_of_things">
@@ -28,5 +47,7 @@
         <item>Фиолетовый</item>
         <item>Цветное</item>
     </string-array>
+
+    <string name="title_activity_main0">Main0Activity</string>
 
 </resources>
